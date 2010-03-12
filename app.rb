@@ -4,7 +4,10 @@ require "rack-flash"
 require "haml"
 require "mongo_mapper"
 
-
+enable :sessions
+use Rack::Flash
+# logger = Logger.new("puravida.log")
+# pass like Mongo::Connection.new("localhost", :port, :logger => logger)
 MongoMapper.connection = Mongo::Connection.new("localhost")
 MongoMapper.database = "purovida"
 
@@ -29,7 +32,7 @@ end
 get "/" do
   language = ["english", "spanish"].shuffle[0]
   vocab = Vocabulary.all.shuffle[0]
-  
+
   # funky how django-like this part feels (ala render_to_response())
   haml :index, :locals => {
     :language => language,
@@ -41,9 +44,14 @@ end
 post "/" do
   language = params[:language]
   guess = params[:answer]
-  answer = Vocabulary.all(language.to_sym => guess)[translation(language).to_sym]
+  
+  # TODO: this is fail, gotta figure out why but for now...
+  find_by_language = "find_by_#{language}".to_sym
+  vocab_item = Vocabulary.send(find_by_language, guess)
+  answer = vocab_item[translation(language)] || "bogus"
   
   if guess == answer
+    flash[:notice] = "¡Correcto!"
     redirect("/")
   else
     redirect("/fail")
@@ -63,7 +71,7 @@ post "/add" do
     :points => params[:points]
   })
   vocab.save()
-  
+
   redirect("/")
 end
 
@@ -74,11 +82,11 @@ end
 
 
 helpers do
-  
+
   def translation(language)
     (language == "english" ? "spanish" : "english")
   end
-  
+
   # stuff
-  
+
 end
