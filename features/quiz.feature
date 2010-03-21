@@ -4,7 +4,7 @@ Feature: getting inquisition'd on your Spanish vocabulary
     So that I may prosper in linguistic wealth
     
     Scenario: I get a vocab challenge right
-        Given the vocab challenge is "esponje"
+        Given the vocab challenge is "perro"
         When I fill in "answer" with "sponge"
         And I click "Answer"
         Then I should see a success message

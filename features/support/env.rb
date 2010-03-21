@@ -6,7 +6,7 @@ Sinatra::Application.app_file = app
 
 
 require "spec"
-# require "rack/test"
+require "rack/test"
 require "webrat"
 
 Webrat.configure do |config|
@@ -14,7 +14,7 @@ Webrat.configure do |config|
 end
 
 class El_Mundo
-  # include Rack::Test::Methods
+  include Rack::Test::Methods
   include Webrat::Methods
   include Webrat::Matchers
   
@@ -25,4 +25,4 @@ class El_Mundo
   end
 end
 
-World { El_Mundo } # don't cry
+World { El_Mundo }
