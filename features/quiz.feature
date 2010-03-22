@@ -5,7 +5,7 @@ Feature: getting inquisition'd on your Spanish vocabulary
     
     Scenario: I get a vocab challenge right
         Given the vocab challenge is "perro"
-        When I fill in "answer" with "sponge"
+        When I fill in "answer" with "dog"
         And I click "Answer"
         Then I should see a success message
         And I should see a vocab challenge

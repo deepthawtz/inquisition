@@ -1,4 +1,5 @@
 %w[ rubygems sinatra haml setup ].map {|x| require x }
+$KCODE='utf-8'
 
 set :vocab, Vocabulary.all.shuffle()
 set :environment, :development
