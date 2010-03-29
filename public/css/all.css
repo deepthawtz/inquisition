@@ -1,0 +1,41 @@
+body {
+  font-family:Arial,sans-serif;
+  margin:50px 0;
+  padding:20px;
+  text-align:center;
+}
+h1 {
+  color:#666;
+  font-family:Georgia;
+  font-size:48pt;
+}
+a {
+  text-decoration:none;
+  color:maroon;
+}
+.main {
+  width:500px;
+  margin:0 auto;
+  padding:20px;
+  border:1px dashed #333;
+  background-color:#eee;
+}
+.main a {
+  text-decoration:underline;
+}
+.challenge{
+  color:#333;
+  font-family:Georgia;
+  font-size:48pt;
+}
+input[type=text] {
+  font-size:24pt;
+  font-weight:bold;
+  margin:20px;
+}
+label {
+  text-align:left;
+}
+.button {
+  height:100px;
+}

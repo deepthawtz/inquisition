@@ -1,11 +1,22 @@
+!!! 5
 %html
   %head
     %title The Spanish Inquisition
     %meta{:"http-equiv" => 'Content-Type', :content => 'text/html; charset=UTF-8'}
-    -#%link{ :type => 'text/css', :rel => 'stylesheet', :href => '/style.css'}
+    %link{ :type => 'text/css', :rel => 'stylesheet', :href => 'css/all.css'}
     -#%script{ :type => 'text/javascript', :src => '/jquery.min.js' }
     -#%script{ :type => 'text/javascript', :src => '/app.js' }
     
   %body
-    
-    =yield
+    %a{:href => "/"}
+      %h1 The Spanish Inquisition
+    .main
+      =yield
+
+    %p
+      Brought to you by
+      %a{:href=>"http://sinatrarb.com/"}Sinatra
+      and
+      %a{:href=>"http://mongodb.org/"}MongoDB
+      by
+      %a{:href=>"http://github.com/deepthawtz/"}Dylan Clendenin.

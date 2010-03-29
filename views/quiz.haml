@@ -1,16 +1,16 @@
-%h2 The Spanish Inquisition
-%h4 What is this word in #{ locals[:translate_for].capitalize }
-%br
+%p
+  What is this word in
+  = locals[:translate_for].capitalize
 
 %h1
-  %b
-    %em #{ locals[:word] }
+  .challenge
+    %em= locals[:word]
 
 %form{ :action => "/", :method => "POST" }
   %input{ :type =>"text", :name => "answer" }
   %input{ :type => "hidden", :name => "word", :value => "#{ locals[:word] }" }
   %input{ :type => "hidden", :name => "language", :value => "#{ locals[:language] }" }
-  %input{ :type => "submit", :value => "Answer" }
+  %input.button{ :type => "submit", :value => "Answer" }
 
 %p
   %a{ :href => "/add" }
@@ -18,4 +18,3 @@
 %br
 %br
 
-%p Written in Ruby and MongoDB by Dylan Clendenin.
