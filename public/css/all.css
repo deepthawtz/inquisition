@@ -14,7 +14,8 @@ a {
   color:maroon;
 }
 .main {
-  width:500px;
+  width:540px;
+  height:400px;
   margin:0 auto;
   padding:20px;
   border:1px dashed #333;
@@ -34,8 +35,14 @@ input[type=text] {
   margin:20px;
 }
 label {
+  float:left;
+  margin-top:30px;
   text-align:left;
 }
 .button {
+  display:none;
   height:100px;
+}
+.add .button {
+  display:inline;
 }
