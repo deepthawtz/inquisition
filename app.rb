@@ -15,6 +15,8 @@ get "/" do
       :word => vocab[language_of_word.to_s],
       :translate_for => flip(language_of_word),
     }
+  elsif Vocabulary.empty?
+    haml :start
   else
     haml :done
   end
@@ -69,7 +71,4 @@ helpers do
     end
   end
 end
-
-
-
 
