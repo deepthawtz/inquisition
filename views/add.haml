@@ -1,10 +1,13 @@
 %h2 Add a New Vocabulary Word
 
-%form{ :action => "/add", :method => "post" }
+%form.add{ :action => "/add", :method => "post" }
   %label English word
   %input{ :type => "text", :name => "english" }
+  
   %label Spanish word
   %input{ :type => "text", :name => "spanish" }
+  
   %label Points (out of 10)
   %input{ :type => "text", :name => "points" }
-  %input{ :type => "submit", :value => "Add" }
+  
+  %input.button{ :type => "submit", :value => "Add" }

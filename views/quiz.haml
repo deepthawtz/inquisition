@@ -1,20 +1,19 @@
 %p
   What is this word in
-  = locals[:translate_for].capitalize
+  = locals[:translate_for].capitalize + "?"
 
 %h1
   .challenge
     %em= locals[:word]
 
-%form{ :action => "/", :method => "POST" }
-  %input{ :type =>"text", :name => "answer" }
+%form.inquisition{ :action => "/", :method => "POST" }
+  %input.guess{ :type =>"text", :name => "answer" }
   %input{ :type => "hidden", :name => "word", :value => "#{ locals[:word] }" }
   %input{ :type => "hidden", :name => "language", :value => "#{ locals[:language] }" }
+  %input{ :type => "hidden", :name => "time", :value => ""}
   %input.button{ :type => "submit", :value => "Answer" }
 
 %p
   %a{ :href => "/add" }
     add a new vocab term
-%br
-%br
 
