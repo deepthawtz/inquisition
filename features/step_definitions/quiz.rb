@@ -1,16 +1,29 @@
+Given /^there are no vocabulary words$/ do
+  Vocabulary.remove
+  Vocabulary.count.should == 0
+end
+
+Then /^I should see "([^\"]*)"$/ do |phrase|
+  response_body.should contain(phrase)
+end
+
 Given /^the vocab challenge is "([^\"]*)"$/ do |challenge|
-  visit "/"
-  response_body.should contain("challenge")
+  Vocabulary.remove
+  Vocabulary.insert(:spanish => "perro", :english => "dog")
+  visit "/reset"
+  response_body.should contain(/perro|dog/)
 end
 
 Then /^I should see a success message$/ do
-  pending # express the regexp above with the code you wish you had
+  response_body.should contain("¡correcto!")
 end
 
 Then /^I should see a vocab challenge$/ do
-  pending # express the regexp above with the code you wish you had
+  visit "/"
+  response_body.should contain("What is this word")
+  response_body.should have_selector(:class => "inquisition")
 end
 
 Then /^I should see a failure message$/ do
-  pending # express the regexp above with the code you wish you had
+  response_body.should contain("You Fail")
 end

@@ -3,6 +3,13 @@ Feature: getting inquisition'd on your Spanish vocabulary
     I want to be quizzed on Spanish vocabulary
     So that I may prosper in linguistic wealth
     
+    Scenario: I am the first to play
+        Given there are no vocabulary words
+        When I go to "/"
+        Then I should see "start adding words"
+        When I follow "start adding words"
+        Then I should see a form
+    
     Scenario: I get a vocab challenge right
         Given the vocab challenge is "perro"
         When I fill in "answer" with "dog"
@@ -15,6 +22,5 @@ Feature: getting inquisition'd on your Spanish vocabulary
         When I fill in "answer" with "george"
         And I click "Answer"
         Then I should see a failure message
-        And I should see a vocab challenge
     
     # TODO: login, score,

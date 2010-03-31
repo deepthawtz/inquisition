@@ -1,14 +1,14 @@
-# Setup for Sinatra with Cucumber
+# A lot of this comes from the Cucumber wiki
 # (http://wiki.github.com/aslakhellesoy/cucumber/sinatra)
 app = File.join(File.dirname(__FILE__), *%w[.. .. app.rb])
 require app
 Sinatra::Application.app_file = app
+set :environment, :test
 
-
-require "spec"
+require "spec/expectations"
 require "rack/test"
-require "webrat"
 
+require "webrat"
 Webrat.configure do |config|
   config.mode = :rack
 end
@@ -25,4 +25,23 @@ class El_Mundo
   end
 end
 
-World { El_Mundo }
+World { El_Mundo.new }
+
+
+Before do
+  db = Connection.new("localhost", Connection::DEFAULT_PORT).db("puravida")
+  Vocabulary = db.collection("test_vocab_quiz")
+  if defined? Vocabulary
+    puts "------------------------------------------"
+    puts "Using Mongo Collection: #{Vocabulary.name}"
+    puts "------------------------------------------"
+  end
+  def Vocabulary.empty?
+    (Vocabulary.count == 0 ? true : false)
+  end
+  def Vocabulary.all
+    Vocabulary.find.to_a
+  end
+  # remove all records in collection
+  Vocabulary.remove
+end
