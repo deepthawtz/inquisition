@@ -24,6 +24,14 @@ a {
 .main a {
   text-decoration:underline;
 }
+.message {
+  margin:0 auto;
+  height:40px;
+  width:400px;
+  padding:8px;
+  background:#C9F15D;
+  border:1px solid #7D9942;
+}
 .challenge{
   color:#333;
   font-family:Georgia;
