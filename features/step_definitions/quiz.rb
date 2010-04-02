@@ -7,14 +7,22 @@ Then /^I should see "([^\"]*)"$/ do |phrase|
   response_body.should contain(phrase)
 end
 
-Given /^the vocab challenge is "([^\"]*)"$/ do |challenge|
+Given /^the vocab challenge is "([^\"]*)" \(correct\)$/ do |word|
   Vocabulary.remove
-  Vocabulary.insert(:spanish => "perro", :english => "dog")
+  Vocabulary.insert(:spanish => word, :english => "dog")
   visit "/reset"
   response_body.should contain(/perro|dog/)
 end
 
+Given /^the vocab challenge is "([^\"]*)" \(incorrect\)$/ do |word|
+  Vocabulary.remove
+  Vocabulary.insert(:spanish => word, :english => "sponge")
+  visit "/reset"
+  response_body.should contain(/esponje|sponge/)
+end
+
 Then /^I should see a success message$/ do
+  visit "/?success=1"
   response_body.should contain("¡correcto!")
 end
 
