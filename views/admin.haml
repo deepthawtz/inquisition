@@ -1,0 +1,13 @@
+%table
+  %thead
+    %tr
+      %th English
+      %th Spanish
+      %th Points
+  %tbody
+    - locals[:vocab].each do |v|
+      %tr
+        %td= v["english"]
+        %td= v["spanish"]
+        %td= v["points"]
+      

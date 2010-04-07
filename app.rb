@@ -54,6 +54,10 @@ get "/reset" do
   redirect "/"
 end
 
+get "/admin" do
+  haml :admin, :locals => {:vocab => Vocabulary.all}
+end
+
 
 helpers do
   def flip(language)

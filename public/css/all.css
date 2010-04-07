@@ -13,9 +13,29 @@ a {
   text-decoration:none;
   color:maroon;
 }
+a>h1:hover {
+  color:#3E6999;
+  text-decoration:none;
+}
+a:hover {
+  text-decoration:underline;
+}
+.score {
+  width:200px;
+  height:160px;
+  float:left;
+  border:4px solid #748EB1;
+  background-color:#C9E1F0;
+}
+.points {
+  font-family:Georgia;
+  font-size:90pt;
+  font-weight:bold;
+  color:#444;
+  margin-top:-40px;
+}
 .main {
   width:540px;
-  height:400px;
   margin:0 auto;
   padding:20px;
   border:1px dashed #333;
@@ -53,4 +73,7 @@ label {
 }
 .add .button {
   display:inline;
+}
+footer {
+  margin:18px;
 }
