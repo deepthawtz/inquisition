@@ -9,6 +9,11 @@ h1 {
   font-family:Georgia;
   font-size:48pt;
 }
+h2 {
+  color:#666;
+  font-family:Georgia;
+  font-size:32pt;
+}
 a {
   text-decoration:none;
   color:maroon;
@@ -52,19 +57,61 @@ a:hover {
   background:#C9F15D;
   border:1px solid #7D9942;
 }
+.errors {
+  margin:0 auto;
+  color:#444;
+  padding:20px;
+  text-align:left;
+  background-color:#F58BB5;
+  width:400px;
+  border:1px solid #995170;
+}
+.errors li {
+  padding:8px;
+}
 .challenge{
   color:#333;
   font-family:Georgia;
   font-size:48pt;
+}
+.inquisition .help {
+  float:left;
+  color:#000;
+  text-decoration:none;
+  background-color:#95BFDD;
+  border:1px solid #446B99;
+  margin-top:30px;
+  margin-left:20px;
+  width:40px;
+  padding:4px;
+  height:20px;
+}
+.inquisition .help:hover {
+  cursor:pointer;
+  background-color:#AED6FF;
 }
 input[type=text] {
   font-size:24pt;
   font-weight:bold;
   margin:20px;
 }
+input:focus {
+  background-color:#FEFF80;
+}
+select {
+  font-size:24pt;
+  font-weight:bold;
+  margin-top:40px;
+}
+select:focus {
+  background-color:#FEFF80;
+  font-size:24pt;
+  font-weight:bold;
+  margin-top:40px;
+}
 label {
   float:left;
-  margin-top:30px;
+  margin-top:40px;
   text-align:left;
 }
 .button {
@@ -72,8 +119,36 @@ label {
   height:100px;
 }
 .add .button {
+  margin-top:50px;
+  margin-left:320px;
+  font-size:20pt;
+  height:40px;
+  width: 120px;
+  padding:6px;
   display:inline;
+}
+.rules {
+  margin:0 auto;
+  text-align:left;
+  background-color:#E4F081;
+  border:2px solid #909936;
+}
+.rules li {list-style:none;}
+.rules .title {
+  font-weight:bold;
+  font-size:18pt;
+}
+.rules .rule {
+  margin:4px;
+  padding:8px;
+  border-bottom: 1px dotted #888;
 }
 footer {
   margin:18px;
+}
+footer .mongo {
+  margin:20px;
+}
+footer .mongo:hover {
+  cursor:pointer;
 }

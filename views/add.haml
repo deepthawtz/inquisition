@@ -1,13 +1,23 @@
 %h2 Add a New Vocabulary Word
 
+.errors
+  %h4 we don't like that, here's why:
+  %ul
+
 %form.add{ :action => "/add", :method => "post" }
   %label English word
   %input{ :type => "text", :name => "english" }
   
   %label Spanish word
   %input{ :type => "text", :name => "spanish" }
-  
-  %label Points (out of 10)
+    
+  %label Points ( of 10 )
   %input{ :type => "text", :name => "points" }
   
+  %label Word Type
+  %select{ :name => "type" }
+    - %w[verb noun adjective].each do |type|
+      %option{ :value => "#{type}"}= type
+  
+  %br
   %input.button{ :type => "submit", :value => "Add" }

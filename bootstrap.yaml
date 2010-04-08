@@ -1,202 +1,242 @@
 ---
   - :english: dog
     :spanish: el perro
+    :type: noun
     :points: 2
   
   - :english: book
     :spanish: el libro
+    :type: noun
     :points: 2
   
   - :english: downtown
     :spanish: el centro
+    :type: noun
     :points: 2
   
   - :english: to sleep
     :spanish: dormir
+    :type: verb
     :points: 2
   
   - :english: party
     :spanish: la fiesta
+    :type: noun
     :points: 1
   
   - :english: utensil
     :spanish: el utensilio
+    :type: noun
     :points: 2
   
   - :english: family
     :spanish: la familia
+    :type: noun
     :points: 1
   
   - :english: cotton
-    :spanish: el algadón
+    :spanish: el algodón
+    :type: noun
     :points: 4
   
   - :english: school
     :spanish: la escuela
+    :type: noun
     :points: 2
   
   - :english: to read
     :spanish: leer
+    :type: verb
     :points: 3
   
   - :english: to have
     :spanish: tener
+    :type: verb
     :points: 3
-  
-  - :english: let's go
-    :spanish: vamos
-    :points: 2
-  
-  - :english: I prefer
-    :spanish: Yo prefiero
-    :points: 3
-  
+    
   - :english: Sunday
     :spanish: El Domingo
+    :type: noun
     :points: 3
   
   - :english: fruit
     :spanish: las frutas
+    :type: noun
     :points: 1
   
   - :english: postcard
     :spanish: la tarjeta postal
+    :type: noun
     :points: 5
   
   - :english: icecream
     :spanish: el helado
+    :type: noun
     :points: 3
 
   - :english: to swim
     :spanish: nadar
+    :type: verb
     :points: 4
   
   - :english: to do
     :spanish: hacer
+    :type: verb
     :points: 3
   
   - :english: painter
     :spanish: el pintor
+    :type: noun
     :points: 3
   
   - :english: cocinar
     :spanish: to cook
+    :type: verb
     :points: 3
   
-  - :english: pasttime
+  - :english: pastime
     :spanish: el pasatiempo
+    :type: noun
     :points: 4
   
   - :english: to dance
     :spanish: bailar
+    :type: verb
     :points: 3
   
   - :english: music
     :spanish: la música
+    :type: noun
     :points: 3
   
   - :english: boy
     :spanish: el niño
+    :type: noun
     :points: 2
   
   - :english: kitchen
     :spanish: la cocina
+    :type: noun
     :points: 2
   
   - :english: table
     :spanish: la mesa
+    :type: noun
     :points: 2
   
   - :english: church
     :spanish: la iglesia
+    :type: noun
     :points: 2
   
   - :english: beach
     :spanish: la playa
+    :type: noun
     :points: 2
   
   - :english: rain
     :spanish: la lluvia
+    :type: noun
     :points: 2
   
   - :english: water
     :spanish: el agua
+    :type: noun
     :points: 3
   
   - :english: business
     :spanish: el negocio
+    :type: noun
     :points: 3
   
   - :english: shoes
     :spanish: los zapatos
+    :type: noun
     :points: 3
   
   - :english: shirt
     :spanish: la camisa
+    :type: noun
     :points: 2
   
   - :english: class
     :spanish: la clase
+    :type: noun
     :points: 2
   
   - :english: fire
     :spanish: el fuego
+    :type: noun
     :points: 2
   
   - :english: eagle
     :spanish: el águila
+    :type: noun
     :points: 4
   
   - :english: cat
     :spanish: el gato
+    :type: noun
     :points: 2
   
   - :english: to cut
     :spanish: cortar
+    :type: verb
     :points: 3
   
   - :english: to play
     :spanish: jugar
+    :type: verb
     :points: 3
 
   - :english: garden
     :spanish: el jardín
+    :type: noun
     :points: 3
   
   - :english: Autumn
     :spanish: el otoño
+    :type: noun
     :points: 3
   
   - :english: mouth
     :spanish: la boca
+    :type: noun
     :points: 3
   
   - :english: street
     :spanish: la calle
+    :type: noun
     :points: 3
   
   - :english: restaurant
     :spanish: el restaurante
+    :type: noun
     :points: 3
   
   - :english: movie
     :spanish: la pelicula
+    :type: noun
     :points: 3
   
   - :english: flower
     :spanish: la flor
+    :type: noun
     :points: 3
   
   - :english: couch
     :spanish: el sofá
+    :type: noun
     :points: 3
   
   - :english: sun
     :spanish: el sol
+    :type: noun
     :points: 3
   
   - :english: body
     :spanish: el cuerpo
+    :type: noun
     :points: 3
   
   

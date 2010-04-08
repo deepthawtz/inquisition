@@ -37,16 +37,25 @@ get "/add" do
 end
 
 post "/add" do
-  Vocabulary.insert({
-    :english => params[:english],
-    :spanish => params[:spanish],
-    :points => params[:points]
-  })
-  redirect "/"
+  if ghetto_validator(params)
+    Vocabulary.insert({
+      :english => params[:english],
+      :spanish => params[:spanish],
+      :type => params[:type],
+      :points => params[:points]
+    })
+    redirect "/"
+  else
+    redirect "/add"
+  end
 end
 
 get "/fail" do
   haml :fail
+end
+
+get "/help" do
+  haml :help
 end
 
 get "/reset" do
@@ -54,8 +63,8 @@ get "/reset" do
   redirect "/"
 end
 
-get "/admin" do
-  haml :admin, :locals => {:vocab => Vocabulary.all}
+get "/stats" do
+  haml :stats, :locals => {:vocab => Vocabulary.all}
 end
 
 
@@ -79,6 +88,25 @@ helpers do
       :word => vocab[language_of_word],
       :translate_for => flip(language_of_word),
     }.merge! extra
+  end
+  
+  def ghetto_validator(vocab)
+    if (vocab[:english].empty? && vocab[:spanish].empty?)
+      false
+    else
+      # valid = {
+      #   :english => /\w*/,
+      #   :spanish => /\w*/,
+      #   :type => /noun|verb|adjective/,
+      #   :points => /1|2|3|4|5|6|7|8|9|10/
+      # }
+      # valid.each do |k,regex|
+      #   if not vocab[k].grep(valid[k])
+      #     return false
+      #   end
+      # end
+      true
+    end
   end
 end
 

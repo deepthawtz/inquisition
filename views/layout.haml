@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %meta{ :charset => "utf-8" }
+    %meta{:charset => "utf-8"}
     %title The Spanish Inquisition
     %link{ :type => "text/css", :rel => "stylesheet", :href => "css/all.css" }
     
@@ -11,20 +11,21 @@
         %a{:href => "/"}
           %h1 The Spanish Inquisition
     
-    .score
-      %h3 Points:
-      .points
+    / .score
+    /   %h3 Points:
+    /   .points
     
     .main
       =yield
     
     %footer
-      Brought to you by
-      %a{:href=>"http://sinatrarb.com/"}Sinatra
-      and
-      %a{:href=>"http://mongodb.org/"}MongoDB
+      written in
+      %a{:href => "http://sinatrarb.com/"}Sinatra
       by
-      %a{:href=>"http://github.com/deepthawtz/"}Dylan Clendenin.
+      %a{:href => "http://github.com/deepthawtz/"}Dylan Clendenin.
+      %br
+      %a{:href => "http://mongodb.org/"}
+        %img.mongo{:src => "img/powered_by_mongodb.png"}
     
     %script{ :type => "text/javascript", :src => "js/jquery-1.4.2.min.js" }
     %script{ :type => "text/javascript", :src => "js/app.js" }

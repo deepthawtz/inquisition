@@ -27,6 +27,7 @@ task :bootstrap do
     Vocabulary.insert({
       :english => term[:english],
       :spanish => term[:spanish],
+      :type => term[:type],
       :points => term[:points],
     })
   end
