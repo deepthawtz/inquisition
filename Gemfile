@@ -1,4 +1,4 @@
-# is this all I need to do here?
+source :gemcutter
 
 gem "sinatra"
 gem "haml"
