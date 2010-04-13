@@ -95,18 +95,16 @@ a .appname:hover {
   font-size:48pt;
 }
 a.help {
-  float:left;
   color:#124E7B;
-  font-size:20pt;
+  font-size:12pt;
   font-weight:bold;
-  -webkit-border-radius:40px;
+  -webkit-border-radius:22px;
   text-decoration:none;
   background-color:#95BFDD;
   border:1px solid #446B99;
-  width:22px;
+  width:40px;
   padding:8px;
   padding-bottom:12px;
-  height:20px;
 }
 .help:hover {
   cursor:pointer;
@@ -115,8 +113,8 @@ a.help {
 input.guess {
   color:#4C4C4C;
   font-weight:bold;
-  font-size:48pt;
-  font-family:"Monaco";
+  font-size:62pt;
+  font-family:"Courier";
 }
 input[type=text] {
   font-size:24pt;
@@ -165,12 +163,22 @@ label {
   padding:8px;
   border-bottom: 1px dotted #888;
 }
+.preferences {
+  font-size:24pt;
+  font-weight:bold;
+  color:#641211;
+  padding:12px;
+  border-bottom:1px solid #641211;
+  margin-bottom:40px;
+}
+.pref {
+  float:left;
+  margin-top:0px;
+  margin-left:40px;
+  font-weight:bold;
+}
 a.back {
   margin-left:400px;
-  padding:12px;
-  background-color:#C0EEAF;
-  -webkit-border-radius:15px;
-  text-decoration:none;
 }
 footer {
   margin:18px;

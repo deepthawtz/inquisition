@@ -1,11 +1,10 @@
 .notice
 
-%h3 Application Preferences
-%p these will be applied per session
+.preferences Application Preferences
 
-%form.preferences
-  %p Hints Turned On
+%form
+  %p.pref Hints Turned On
   %input.hints-yes{:type => "radio"} Yes
   %input.hints-no{:type => "radio"} No
 
-%a.back{:href => "/"} go back
+%a.back{:href => "/"} back
