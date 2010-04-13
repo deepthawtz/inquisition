@@ -1,5 +1,7 @@
 .message= locals[:message]
 
+%a.help{ :href => "/help" } ?
+
 %p
   What is this word in
   = locals[:translate_for].capitalize + "?"
@@ -9,14 +11,14 @@
     %em= locals[:word]
 
 %form.inquisition{ :action => "/", :method => "POST" }
-  %a.help{ :href => "/help" }wtf?
   %input.guess{ :type =>"text", :autocomplete => "off", :name => "answer" }
-  %input{ :type => "hidden", :name => "word", :value => "#{ locals[:word] }" }
-  %input{ :type => "hidden", :name => "language", :value => "#{ locals[:language] }" }
-  %input.points_for_word{ :type => "hidden", :name => "points", :value => "#{ locals[:points] }" }
+  %input{ :type => "hidden", :name => "type", :value => "#{locals[:type]}"}
+  %input{ :type => "hidden", :name => "word", :value => "#{locals[:word]}" }
+  %input{ :type => "hidden", :name => "language", :value => "#{locals[:language]}" }
+  %input.points_for_word{ :type => "hidden", :name => "points", :value => "#{locals[:points]}" }
   %input.button{ :type => "submit", :value => "Answer" }
 
-%p
-  %a{ :href => "/add" }
-    add a new vocab term
+.hints
+  .onoff [x] hide
+  %p I am a relevant hint
 

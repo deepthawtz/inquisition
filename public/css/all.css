@@ -4,9 +4,11 @@ body {
   padding:20px;
   text-align:center;
 }
-h1 {
+.appname {
   color:#666;
   font-family:Georgia;
+  font-weight:bold;
+  margin:20px;
   font-size:48pt;
 }
 h2 {
@@ -18,11 +20,23 @@ a {
   text-decoration:none;
   color:maroon;
 }
-a>h1:hover {
+a .appname:hover {
   color:#3E6999;
   text-decoration:none;
 }
-a:hover {
+.notice {
+  background-color:#F9B7E8;
+}
+.options {
+  position:absolute;
+  top:10px;
+}
+.options li {
+  float:left;
+  margin-right:10px;
+  list-style:none;
+}
+.options a {
   text-decoration:underline;
 }
 .score {
@@ -60,35 +74,49 @@ a:hover {
 .errors {
   margin:0 auto;
   color:#444;
-  padding:20px;
+  padding:6px;
   text-align:left;
   background-color:#F58BB5;
   width:400px;
   border:1px solid #995170;
 }
 .errors li {
-  padding:8px;
+  padding:2px;
 }
+.hints {
+  padding:8px;
+  background-color:#9CD3FF;
+}
+.onoff {float:right;font-size:9pt;color:#A3AAC4;}
+.onoff:hover {color:#7A7A7A;cursor:pointer;}
 .challenge{
   color:#333;
   font-family:Georgia;
   font-size:48pt;
 }
-.inquisition .help {
+a.help {
   float:left;
-  color:#000;
+  color:#124E7B;
+  font-size:20pt;
+  font-weight:bold;
+  -webkit-border-radius:40px;
   text-decoration:none;
   background-color:#95BFDD;
   border:1px solid #446B99;
-  margin-top:30px;
-  margin-left:20px;
-  width:40px;
-  padding:4px;
+  width:22px;
+  padding:8px;
+  padding-bottom:12px;
   height:20px;
 }
-.inquisition .help:hover {
+.help:hover {
   cursor:pointer;
   background-color:#AED6FF;
+}
+input.guess {
+  color:#4C4C4C;
+  font-weight:bold;
+  font-size:48pt;
+  font-family:"Monaco";
 }
 input[type=text] {
   font-size:24pt;
@@ -99,12 +127,6 @@ input:focus {
   background-color:#FEFF80;
 }
 select {
-  font-size:24pt;
-  font-weight:bold;
-  margin-top:40px;
-}
-select:focus {
-  background-color:#FEFF80;
   font-size:24pt;
   font-weight:bold;
   margin-top:40px;
@@ -142,6 +164,13 @@ label {
   margin:4px;
   padding:8px;
   border-bottom: 1px dotted #888;
+}
+a.back {
+  margin-left:400px;
+  padding:12px;
+  background-color:#C0EEAF;
+  -webkit-border-radius:15px;
+  text-decoration:none;
 }
 footer {
   margin:18px;

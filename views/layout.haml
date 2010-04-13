@@ -8,8 +8,17 @@
   %body
     %header
       %hgroup
+        .options
+          %ul
+            %li
+              %a{:href => "/preferences"}
+                preferences
+            %li
+              %a{ :href => "/add" }
+                add a word
+            
         %a{:href => "/"}
-          %h1 The Spanish Inquisition
+          .appname The Spanish Inquisition
     
     / .score
     /   %h3 Points:

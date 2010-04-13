@@ -5,17 +5,18 @@
   %ul
 
 %form.add{ :action => "/add", :method => "post" }
-  %label English word
-  %input{ :type => "text", :name => "english" }
+  %label.english English word
+  %input.english{ :type => "text", :name => "english" }
   
-  %label Spanish word
-  %input{ :type => "text", :name => "spanish" }
+  %label.spanish Spanish word
+  %input.spanish{ :type => "text", :name => "spanish" }
     
-  %label Points ( of 10 )
-  %input{ :type => "text", :name => "points" }
+  %label.point Points ( of 10 )
+  %input.point{ :type => "text", :name => "points" }
   
   %label Word Type
   %select{ :name => "type" }
+    %option{ :value => ""} ----
     - %w[verb noun adjective].each do |type|
       %option{ :value => "#{type}"}= type
   

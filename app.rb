@@ -58,6 +58,10 @@ get "/help" do
   haml :help
 end
 
+get "/preferences" do
+  haml :prefs
+end
+
 get "/reset" do
   set :vocab, Vocabulary.all.shuffle()
   redirect "/"
@@ -86,6 +90,7 @@ helpers do
     {
       :language => language_of_word,
       :word => vocab[language_of_word],
+      :type => vocab[:type],
       :translate_for => flip(language_of_word),
     }.merge! extra
   end
