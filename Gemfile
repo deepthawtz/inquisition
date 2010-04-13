@@ -3,5 +3,12 @@
 gem "sinatra"
 gem "haml"
 gem "mongo"
-gem "cucumber"
-gem "webrat"
+
+group :test do
+  gem "cucumber"
+  gem "webrat"
+end
+
+group :production do
+  gem "unicorn"
+end
