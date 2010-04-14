@@ -29,6 +29,11 @@ Get Started
     ruby app.rb
     # hit localhost:4567
 
+Screenshot
+----------
+
+[![Inquisition](http://si.ghettochip.com/img/screenshot.png)](http://si.ghettochip.com)
+
 Author
 ------
 * Dylan Clendenin (Github|Twitter: [deepthawtz](http://github.com/deepthawtz))
