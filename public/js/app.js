@@ -1,8 +1,8 @@
-$(document).ready(function(){
+$(function(){
     // focus cursor in text box
     $(".guess").focus()
     $(".add input:first").focus()
-    
+
     if (localStorageSupport()) {
         if (localStorage.hints == undefined) {
             localStorage.hints = "yes"
@@ -20,29 +20,28 @@ $(document).ready(function(){
     else {
         $(".notice").html("This application's settings are stored using HTML5. Your browser is dusty, get something new.").css("padding", "8px")
     }
-    
+
     $(".hints-yes").click(function() {
         $(".hints-no").attr("checked", "")
         localStorage.hints = "yes"
     })
-    
+
     $(".hints-no").click(function() {
         $(".hints-yes").attr("checked", "")
         localStorage.hints = "no"
     })
-    
+
     $(".onoff").click(function(){
         localStorage.hints = "no"
         $(".hints").hide()
     })
-    
-    
-    
+
+
     // quiz message
     $(".message").hide()
     if (messageDisplayed())
         $(".message").fadeIn(400)
-    
+
     $(".errors").hide()
     $(".add").submit(function(){
         if ($("input.english").val() == "" || $("input.spanish").val() == "") {
