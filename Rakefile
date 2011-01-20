@@ -1,4 +1,3 @@
-$KCODE='utf-8'
 require 'rubygems'
 require 'rake'
 require 'cucumber/rake/task'
@@ -19,7 +18,7 @@ task :bootstrap do
   db = Connection.new("localhost", Connection::DEFAULT_PORT).db("puravida")
   db.drop_collection('vocab_quiz')
   Vocabulary = db.collection('vocab_quiz')
-  
+
   vocab = YAML.load_file('bootstrap.yaml')
   puts "Loading vocab terms...\n"
   vocab.each do |term|
@@ -28,7 +27,7 @@ task :bootstrap do
       :english => term[:english],
       :spanish => term[:spanish],
       :type => term[:type],
-      :points => term[:points],
+      :points => term[:points]
     })
   end
 end
