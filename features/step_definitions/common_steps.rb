@@ -5,6 +5,10 @@ When /^I go to "(.*)"$/ do |path|
   visit path
 end
 
+Given /^I am on "([^"]*)"$/ do |path|
+  visit path
+end
+
 When /^I click "(.*)"$/ do |button|
   click_button(button)
 end
