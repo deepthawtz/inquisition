@@ -9,7 +9,7 @@
     %em= locals[:word]
 
 %form.inquisition{ :action => "/", :method => "POST" }
-  %input.guess{ :type =>"text", :autocomplete => "off", :name => "answer" }
+  %input.guess{ :type =>"text", :autocomplete => "off", :name => "answer", :id => "answer" }
   %input{ :type => "hidden", :name => "type", :value => "#{locals[:type]}"}
   %input{ :type => "hidden", :name => "word", :value => "#{locals[:word]}" }
   %input{ :type => "hidden", :name => "language", :value => "#{locals[:language]}" }

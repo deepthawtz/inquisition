@@ -4,7 +4,7 @@
     %meta{:charset => "utf-8"}
     %title The Spanish Inquisition ||| Test Your Spanish Vocabulary Retention
     %link{ :type => "text/css", :rel => "stylesheet", :href => "css/all.css" }
-    
+
   %body
     %header
       %hgroup
@@ -18,27 +18,21 @@
                 add a word
             %li
               %a.help{ :href => "/help" } ?
-            
+
         %a{:href => "/"}
           .appname The Spanish Inquisition
-    
+
     / .score
     /   %h3 Points:
     /   .points
-    
+
     .main
       =yield
-    
+
     %footer
-      written in
-      %a{:href => "http://sinatrarb.com/"}Sinatra
       by
       %a{:href => "http://github.com/deepthawtz/"}Dylan Clendenin.
-      %br
-      %a{:href => "http://mongodb.org/"}
-        %img.mongo{:src => "img/powered_by_mongodb.png"}
-    
+
     %script{ :type => "text/javascript", :src => "js/jquery-1.4.2.min.js" }
     %script{ :type => "text/javascript", :src => "js/app.js" }
 
-    

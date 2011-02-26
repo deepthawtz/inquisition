@@ -1,39 +1,31 @@
 # encoding: UTF-8
 
 Given /^there are no vocabulary words$/ do
-  Vocabulary.remove
-  Vocabulary.count.should == 0
+  TestVocabulary.remove
+  TestVocabulary.count.should == 0
 end
 
 Then /^I should see "([^\"]*)"$/ do |phrase|
-  response_body.should contain(phrase)
+  has_content?(phrase)
 end
 
-Given /^the vocab challenge is "([^\"]*)" \(correct\)$/ do |word|
-  Vocabulary.remove
-  Vocabulary.insert(:spanish => word, :english => "dog")
+Given /^the vocab challenge is "([^\"]*)"$/ do |word|
+  TestVocabulary.remove
+  TestVocabulary.insert(:spanish => word, :english => "dog")
   visit "/reset"
-  response_body.should contain(/perro|dog/)
-end
-
-Given /^the vocab challenge is "([^\"]*)" \(incorrect\)$/ do |word|
-  Vocabulary.remove
-  Vocabulary.insert(:spanish => word, :english => "sponge")
-  visit "/reset"
-  response_body.should contain(/esponje|sponge/)
+  has_content?("perro") || has_content?("dog")
 end
 
 Then /^I should see a success message$/ do
-  visit "/?success=1"
-  response_body.should contain("¡correcto!")
+  has_content?("¡correcto!")
 end
 
 Then /^I should see a vocab challenge$/ do
   visit "/"
-  response_body.should contain("What is this word")
-  response_body.should have_selector(:class => "inquisition")
+  has_content?("What is this word")
+  has_selector?(".inquisition")
 end
 
 Then /^I should see a failure message$/ do
-  response_body.should contain("You Fail")
+  has_content?("You Fail")
 end
