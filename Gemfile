@@ -7,9 +7,11 @@ gem "bson_ext"
 
 group :test do
   gem "cucumber"
-  gem "webrat"
+  gem "rspec"
+  gem "capybara"
 end
 
 group :production do
   gem "unicorn"
 end
+

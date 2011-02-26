@@ -21,4 +21,3 @@ end
 def Vocabulary.empty?
   (Vocabulary.count == 0 ? true : false)
 end
- 

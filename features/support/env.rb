@@ -5,21 +5,13 @@ require app
 Sinatra::Application.app_file = app
 set :environment, :test
 
-require "spec/expectations"
 require "rack/test"
-
-require "webrat"
-Webrat.configure do |config|
-  config.mode = :rack
-end
+require "capybara/cucumber"
+Capybara.app = Sinatra::Application
 
 class El_Mundo
   include Rack::Test::Methods
-  include Webrat::Methods
-  include Webrat::Matchers
-  
-  Webrat::Methods.delegate_to_session :response_code, :response_body
-  
+
   def app
     Sinatra::Application
   end

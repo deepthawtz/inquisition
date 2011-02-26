@@ -1,10 +1,13 @@
-%w[ rubygems sinatra haml setup ].map {|x| require x }
-$KCODE="utf-8"
+# encoding: UTF-8
+%w[ rubygems sinatra haml ./setup ].map {|x| require x }
 
 set :vocab, Vocabulary.all.shuffle()
 set :environment, :development
 set :sessions, true
 
+before do
+  content_type :html, "charset" => "utf-8"
+end
 
 get "/" do
   if vocab = settings.vocab.shift
@@ -20,7 +23,7 @@ post "/" do
   word = params[:word]
   guess = params[:answer]
   language_of_guess = params[:language]
-  
+
   if translation_correct?(word, guess, language_of_guess)
     if vocab = settings.vocab.shift
       haml :quiz, :locals => prep_quiz_question(vocab, :message => "¡correcto!")
@@ -76,7 +79,7 @@ helpers do
   def flip(language)
     (language.to_sym == :english ? "spanish" : "english")
   end
-  
+
   def translation_correct?(o, t, l)
     if Vocabulary.find_one({l => o, flip(l) => t})
       true
@@ -84,7 +87,7 @@ helpers do
       false
     end
   end
-  
+
   def prep_quiz_question(vocab, extra={})
     language_of_word = [:english, :spanish].shuffle[0].to_s
     {
@@ -94,7 +97,7 @@ helpers do
       :translate_for => flip(language_of_word),
     }.merge! extra
   end
-  
+
   def ghetto_validator(vocab)
     if (vocab[:english].empty? && vocab[:spanish].empty?)
       false

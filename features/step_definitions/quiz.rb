@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 Given /^there are no vocabulary words$/ do
   Vocabulary.remove
   Vocabulary.count.should == 0
