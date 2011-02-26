@@ -1,11 +1,12 @@
-require 'rubygems'
-require 'rake'
-require 'cucumber/rake/task'
+require "rubygems"
+require "rake"
+require "yaml"
+require "cucumber/rake/task"
 
 task :default => [:cucumber]
 
 Cucumber::Rake::Task.new do |t|
-  t.libs << 'lib'
+  t.libs << "lib"
   t.cucumber_opts = "--format pretty"
 #   t.rcov = true
 #   t.rcov_opts << '--text-summary'
@@ -16,10 +17,10 @@ end
 task :bootstrap do
   require "mongo"; include Mongo
   db = Connection.new("localhost", Connection::DEFAULT_PORT).db("puravida")
-  db.drop_collection('vocab_quiz')
-  Vocabulary = db.collection('vocab_quiz')
+  db.drop_collection("vocab_quiz")
+  Vocabulary = db.collection("vocab_quiz")
 
-  vocab = YAML.load_file('bootstrap.yaml')
+  vocab = YAML.load_file("bootstrap.yaml")
   puts "Loading vocab terms...\n"
   vocab.each do |term|
     puts "inserting: #{term[:english]} => #{term[:spanish]}"
